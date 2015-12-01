@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="532" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="0e972de8-f577-4655-a4f4-5539e69c7692">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="404"/>
+	<parameter name="mat" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM alumnos 
+where matricula= $P{mat}]]>
+	</queryString>
+	<field name="folio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="matricula" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ap_paterno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ap_materno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaNacimiento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="curp" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="celular" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sexo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estadoCivil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="calle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="entidad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="municipio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="colonia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cosigoPostal" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="escuelaProcedencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="carrera" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="promedio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="trabaja" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="entidadFederativa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="anioTermino" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="periodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="programaIngresar" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alumno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Semestre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Metodo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="179" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="50" uuid="6e53dcd5-743c-469a-9cf2-1a86c87a27e1"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\edomex.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="343" y="0" width="189" height="50" uuid="08cc6058-7af1-4730-b32a-dc5a40df35c6"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\tesco.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="205" y="99" width="100" height="20" uuid="1e3f5e8a-1502-4c8a-a378-0eec0127b8d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONSTANCIA ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="159" width="76" height="20" uuid="125338ff-20e1-4a45-bbf1-8ad890092dce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[PRESENTE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="171" splitType="Stretch">
+			<staticText>
+				<reportElement x="7" y="15" width="513" height="20" uuid="71fd8ebc-acaf-43aa-89ab-bb08129abd10"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[De acuerdo a la documentación existente en los archivos de esta institución, me permito informar que el ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="65" y="35" width="54" height="20" uuid="a18cec69-fc0f-4f4a-86c6-22063d4dc6a3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ap_paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="35" width="51" height="20" uuid="1a53b3d0-2689-4996-b1b8-db8d2bec26d4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ap_materno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="270" y="35" width="116" height="20" uuid="ee21c3ac-2588-44b6-a735-fa33e3762a58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[con número de cuenta ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="386" y="35" width="65" height="20" uuid="26126458-de18-45b1-a94f-0f91ce88adcf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="35" width="100" height="20" uuid="21ff2b5b-96e6-4fc6-a053-e18e49f04230"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="7" y="35" width="58" height="20" uuid="b7e379e2-3653-4de8-8612-d5d4eeca33d7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[alumno (a)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="451" y="35" width="69" height="20" uuid="ab234e72-e9fd-4ffb-b1a7-e1d3a4d08a95"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[se encuentra ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="55" width="83" height="20" uuid="f1c50e66-d5a1-491d-93a2-90a1859d95c0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[inscrito (a)  en el ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="55" width="96" height="20" uuid="23cfa729-04f3-4810-a4d3-9c8307a7093f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Semestre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="187" y="55" width="83" height="20" uuid="a90b66b8-ed21-4215-9bb6-2605ec417df6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[de la carrera de ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="55" width="77" height="20" uuid="8edca889-e42a-4bff-9d17-8529a39632b0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{programaIngresar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="347" y="55" width="81" height="20" uuid="62d7cccc-d2f4-4e65-946e-0328c524d579"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[, en el periodo ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="55" width="69" height="20" uuid="a86e5797-5252-418c-ab8a-bddff5957cf0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{periodo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="497" y="55" width="23" height="20" uuid="446409b6-1dc6-46f0-b533-c1db25515432"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[del]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="75" width="263" height="20" uuid="2e1f9136-612f-410a-bc60-3eec48af3e56"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[01 de Septiembre del 2014 al 30 de Enero de 2015. ]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="740ec42b-040e-4b8d-ae32-ceba49f9022c"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ATENTAMENTE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="187" height="20" uuid="1e01d22c-cd52-4719-af80-e285f1bf62cc"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA["CIENCIA, TÉCNICA-PROGRESO "]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<pageFooter>
+		<band height="211" splitType="Stretch">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement x="3" y="149" width="531" height="50" uuid="34bc32ff-1af1-45c5-9ade-4c0a462f00d4"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\foot.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="23" width="293" height="126" uuid="388249ff-b18e-444d-a21b-2094ba377cad"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\gob.png"]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Bottom">
+				<reportElement x="282" y="57" width="250" height="92" uuid="f7915957-c517-4658-afab-3c2cdcc97852"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\gob2.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="451" y="191" width="59" height="20" uuid="33fe34d7-a953-45f3-aac8-ebd9d55e070b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="191" width="22" height="20" uuid="674a48a6-b1b1-4cd4-afa9-8b4f282394ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

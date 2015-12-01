@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b621307d-e07f-473c-8fc8-07cfc29f42f0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mat" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    
+     alumnos.`matricula` AS alumnos_matricula,
+     alumnos.`ap_paterno` AS alumnos_ap_paterno,
+     alumnos.`ap_materno` AS alumnos_ap_materno,
+     alumnos.`nombre` AS alumnos_nombre,
+     alumnos.`carrera` AS alumnos_carrera,
+     alumnos.`promedio` AS alumnos_promedio,
+     alumnos.`periodo` AS alumnos_periodo,
+     alumnos.`Semestre` AS alumnos_Semestre,
+     alumnos.`status` AS alumnos_status,
+     calificaciones.`Fk1_matricula` AS calificaciones_Fk1_matricula,
+     calificaciones.`Fk2_clave_materia` AS calificaciones_Fk2_clave_materia,
+     calificaciones.`Fk2_grupo` AS calificaciones_Fk2_grupo,
+     calificaciones.`calificacion` AS calificaciones_calificacion,
+     calificaciones.`fecha_evaluacion` AS calificaciones_fecha_evaluacion,
+     calificaciones.`periodo` AS calificaciones_periodo,
+     materias.`clave` AS materias_clave,
+     materias.`nom_materia` AS materias_nom_materia,
+     materias.`creditos` AS materias_creditos,
+     materias.`tipo` AS materias_tipo,
+     materias.`estatus` AS materias_estatus,
+     materias.`Fk_id_posgrado` AS materias_Fk_id_posgrado,
+     posgrado.`id_posgrado` AS posgrado_id_posgrado,
+     posgrado.`nombre_posgrado` AS posgrado_nombre_posgrado,
+     posgrado.`tipo_posgrado` AS posgrado_tipo_posgrado,
+     posgrado.`creditos` AS posgrado_creditos,
+     posgrado.`estatus` AS posgrado_estatus,
+     alumnos.`folio` AS alumnos_folio,
+     alumnos.`programaIngresar` AS alumnos_programaIngresar
+FROM
+     `alumnos` alumnos,
+     `calificaciones` calificaciones,
+     `materias` materias,
+     `posgrado` posgrado
+
+WHERE matricula= calificaciones.Fk1_matricula AND  materias.clave= calificaciones.FK2_clave_materia AND posgrado.id_posgrado= materias.FK_id_posgrado AND matricula = $P{mat}]]>
+	</queryString>
+	<field name="alumnos_matricula" class="java.lang.Integer"/>
+	<field name="alumnos_ap_paterno" class="java.lang.String"/>
+	<field name="alumnos_ap_materno" class="java.lang.String"/>
+	<field name="alumnos_nombre" class="java.lang.String"/>
+	<field name="alumnos_carrera" class="java.lang.String"/>
+	<field name="alumnos_promedio" class="java.lang.Integer"/>
+	<field name="alumnos_periodo" class="java.lang.String"/>
+	<field name="alumnos_Semestre" class="java.lang.String"/>
+	<field name="alumnos_status" class="java.lang.Integer"/>
+	<field name="calificaciones_Fk1_matricula" class="java.lang.Integer"/>
+	<field name="calificaciones_Fk2_clave_materia" class="java.lang.String"/>
+	<field name="calificaciones_Fk2_grupo" class="java.lang.String"/>
+	<field name="calificaciones_calificacion" class="java.lang.Integer"/>
+	<field name="calificaciones_fecha_evaluacion" class="java.sql.Date"/>
+	<field name="calificaciones_periodo" class="java.lang.String"/>
+	<field name="materias_clave" class="java.lang.String"/>
+	<field name="materias_nom_materia" class="java.lang.String"/>
+	<field name="materias_creditos" class="java.lang.Integer"/>
+	<field name="materias_tipo" class="java.lang.Boolean"/>
+	<field name="materias_estatus" class="java.lang.Boolean"/>
+	<field name="materias_Fk_id_posgrado" class="java.lang.String"/>
+	<field name="posgrado_id_posgrado" class="java.lang.String"/>
+	<field name="posgrado_nombre_posgrado" class="java.lang.String"/>
+	<field name="posgrado_tipo_posgrado" class="java.lang.String"/>
+	<field name="posgrado_creditos" class="java.lang.Integer"/>
+	<field name="posgrado_estatus" class="java.lang.Boolean"/>
+	<field name="alumnos_folio" class="java.lang.Integer"/>
+	<field name="alumnos_programaIngresar" class="java.lang.String"/>
+	<variable name="materias_clave_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{materias_clave}]]></variableExpression>
+	</variable>
+	<variable name="materias_creditos_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{materias_creditos}]]></variableExpression>
+	</variable>
+	<variable name="posgrado_creditos_1" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{posgrado_creditos}]]></variableExpression>
+	</variable>
+	<variable name="materias_creditos_SUM" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{materias_creditos}]]></variableExpression>
+	</variable>
+	<variable name="calificaciones_calificacion_1" class="java.lang.Integer" resetType="Column" calculation="StandardDeviation">
+		<variableExpression><![CDATA[$F{calificaciones_calificacion}]]></variableExpression>
+	</variable>
+	<variable name="calificaciones_calificacion_2" class="java.lang.Integer" resetType="Column" calculation="Average">
+		<variableExpression><![CDATA[$F{calificaciones_calificacion}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="165" splitType="Stretch">
+			<rectangle>
+				<reportElement x="19" y="15" width="538" height="128" uuid="fde34ba8-a415-4b5a-90ef-677d36cf59e2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="122" y="15" width="318" height="29" uuid="05477910-d189-4991-b0f5-6709bbf585ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[TECNOLÓGICO DE ESTUDIOS SUPERIORES DE COACALCO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="207" y="54" width="155" height="20" uuid="2aea1120-0c83-4276-9845-f1805cbf58e1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[HISTORIAL ACADÉMICO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="97" y="80" width="70" height="20" uuid="8b28bd17-e133-4a10-902d-51c9f64a3a98"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alumnos_matricula}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="25" y="80" width="71" height="20" uuid="949f768f-c6fb-49f0-96fb-103d6d93b894"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[No. de Cuenta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="192" y="81" width="51" height="20" uuid="2bc05aee-295e-4e13-9d1a-b7aa5733c3a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="244" y="81" width="49" height="20" uuid="0f913e34-66f2-49f5-9e60-6b6897821a39"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alumnos_ap_paterno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="292" y="81" width="59" height="20" uuid="faeba107-b4c9-4ada-94c0-68cfabb3eea4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alumnos_ap_materno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="80" width="88" height="20" uuid="358f5350-b30c-433b-81ba-c1c926db288c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alumnos_nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="107" width="41" height="20" uuid="9fa781a1-138b-4306-b2f6-4cd5b6d769bf"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Carrera: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="68" y="107" width="100" height="20" uuid="370ebc90-a1aa-40b6-ad71-47fecbfd275e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{posgrado_nombre_posgrado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="107" width="48" height="20" uuid="5de1ca3e-908d-459e-a7ce-7dc1e3f70168"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Grupo:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="107" width="53" height="20" uuid="ebfd0427-bd99-48d5-8179-245866af0018"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{calificaciones_Fk2_grupo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="248" y="107" width="49" height="20" uuid="1d9f9ef5-87b3-4de1-9d0b-599b7b8bde8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Semestre:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="298" y="107" width="98" height="20" uuid="a2112c11-befd-4e5e-8a33-05fbba1dc166"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{alumnos_Semestre}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="489" y="107" width="55" height="20" uuid="3a112140-ac4b-4d71-acd0-f8d1a4ec8849"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="388" y="107" width="100" height="20" uuid="390fcb63-96f3-40b3-b1be-7b1c708c81c1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Fecha de Expedición:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="476" y="22" width="64" height="20" uuid="5f1aced4-e6aa-480c-9232-1b19b5f888e6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="541" y="22" width="13" height="20" uuid="fac3d17a-4357-407d-9b8e-a7eae22a9710"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="37" y="25" width="35" height="36" uuid="8e644774-6123-4bee-9c48-4aea327f3e69"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\tesco.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="19" y="0" width="538" height="20" uuid="83183498-eba3-431e-87a8-7223d38bc91b"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="19" y="0" width="538" height="20" backcolor="#ADA8A8" uuid="be878c18-f2cd-4b7d-8e6a-4399a91ee130"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="22" y="2" width="62" height="20" uuid="ecb148ca-4e51-4be4-aa59-e022bc5b9f76"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Clave]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="2" width="100" height="20" uuid="41b7c9cc-3ac6-4798-a1cd-52b3d6724841"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Materia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="2" width="100" height="20" uuid="0927e02f-fcaf-4c57-be8d-f5c0b4b5c8bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Creditos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="2" width="100" height="20" uuid="34de3b79-c420-41cd-8949-58a86b2bacba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Calificación ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="2" width="100" height="20" uuid="d05a67ee-aaad-4c94-9d06-3dea0a307f9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="2" width="70" height="20" uuid="b5213c5c-21bc-4edc-83ca-9c10ced02259"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periodo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<rectangle>
+				<reportElement x="19" y="2" width="538" height="20" uuid="55e83359-57de-4272-be1b-024af003c1f5"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="19" y="0" width="538" height="20" backcolor="#CBCBCB" uuid="3044dcf9-42b7-47db-b17b-7af913217599"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="19" y="0" width="65" height="20" uuid="4c94784a-7fa9-48e5-8ae1-270df7c3cd6c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{materias_clave}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="84" y="0" width="100" height="20" uuid="b75db462-b340-40bf-b586-2e0bf93f8cc7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{materias_nom_materia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="0" width="100" height="20" uuid="d9b69502-a448-4d3d-8444-1d3c3af0976e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{materias_creditos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="0" width="100" height="20" uuid="23d87b12-da03-4010-84d4-53bc4b95ce4a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{calificaciones_calificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="384" y="0" width="100" height="20" uuid="ee2c7fd4-4a6b-4868-be77-80698ed12ace"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{calificaciones_fecha_evaluacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="70" height="20" uuid="b9e785c8-b58c-43d9-9f31-671e9e5f588a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{calificaciones_periodo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="202" splitType="Stretch">
+			<rectangle>
+				<reportElement x="13" y="71" width="538" height="126" uuid="ca4acac1-219b-4349-bc8c-2a855903952c"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="359" y="144" width="161" height="20" uuid="e49efb1e-5d63-4120-b84c-c21095392538"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[M. en A. Gerardo Guzmán Núñez.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="362" y="131" width="158" height="1" uuid="22dc8942-9641-4a0d-a56c-e56b069bf473"/>
+			</line>
+			<staticText>
+				<reportElement x="25" y="83" width="145" height="20" uuid="0fde8604-99e2-441a-8469-8409732208af"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de Materias Acreditadas =]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="112" width="144" height="20" uuid="eaa04252-5344-4b60-860d-3110aea8bb54"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Total de Creditos Acumulados =]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="112" width="100" height="20" uuid="4d21713b-5f8e-4e88-857d-2b5494917c92"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{materias_creditos_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="144" width="144" height="20" uuid="a959819d-f27e-491f-80b0-9da65c177ea9"/>
+				<text><![CDATA[Total de Creditos de Carrera = ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="170" y="144" width="100" height="20" uuid="80ecd167-d50b-4d6a-81ee-332b69801428"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{posgrado_creditos_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="26" y="172" width="58" height="20" uuid="3f454ee4-a693-408e-bcc8-67c5ce2fa5f3"/>
+				<text><![CDATA[Promedio = ]]></text>
+			</staticText>
+			<textField evaluationTime="Auto" pattern="#,##0.00%">
+				<reportElement x="244" y="172" width="100" height="20" uuid="9a684363-6b21-43ac-bd91-99bd20cad6a6"/>
+				<textFieldExpression><![CDATA[new Double( $F{materias_creditos}.doubleValue() / $V{materias_creditos_SUM}.doubleValue() )]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<textField>
+					<reportElement x="170" y="83" width="100" height="20" uuid="14eb852f-8a3d-426a-b0c8-5636dfa73071"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{materias_clave_1}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+			<textField>
+				<reportElement x="84" y="172" width="38" height="20" uuid="a234f963-33bd-455a-a21d-3cf18905f7ef"/>
+				<textElement verticalAlignment="Top">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{calificaciones_calificacion_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="172" width="100" height="20" uuid="2812fa31-90ca-4ea5-909e-4842204e15ab"/>
+				<text><![CDATA[Porcentaje Creditos =]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

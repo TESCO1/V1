@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="28f7178c-d48e-423a-8382-86539ec73b31">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT * FROM docentes]]>
+	</queryString>
+	<field name="num_empleado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a_pat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="a_mat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="correo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="area" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estatus" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="num_empleado_1" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_2" class="java.lang.Integer" calculation="System">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_3" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_4" class="java.lang.Integer" resetType="Page" calculation="StandardDeviation">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_5" class="java.lang.Integer" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_6" class="java.lang.Integer" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<variable name="num_empleado_7" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{num_empleado}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="143" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="161" height="50" uuid="4b111ff8-97fa-4a1d-b2cb-7a4ce1295f2b"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\edomex.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="383" y="0" width="189" height="50" uuid="7abefa3b-ee5e-4b2e-b698-23189da04f55"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\tesco.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="208" y="86" width="137" height="29" uuid="afc8cb6f-7148-4e27-b191-832dcacdf890"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE PROFESORES ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="572" height="26" forecolor="#CCCCCC" backcolor="#C6C1C1" uuid="333cfa38-4e02-43e9-aeb9-0f0c22c5b95e"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="0" width="125" height="26" uuid="fc6e2226-34f9-44a2-ae39-0cbce4bdad58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NUMERO DE EMPLEADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="0" width="122" height="26" uuid="86abc588-12bb-46ef-942b-59a9fbb5fb06"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[APELLIDO PATERNO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="1" width="124" height="25" uuid="0ac801d6-99fd-4ecb-bca0-84297d312c19"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[APELLIDO MATERNO ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="0" width="100" height="25" uuid="9eb9386e-07ee-4d61-8b4c-c4868b3096c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="483" y="1" width="89" height="24" uuid="001fcf43-fa81-4e28-a6fe-43a40948773a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ÁREA ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="572" height="20" forecolor="#CCCCCC" backcolor="#E0DEDE" uuid="b7dc4641-f6f0-40b8-984f-724e1089a42b"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="22" y="0" width="100" height="20" uuid="5da29487-961e-4dcd-8b00-08d62043ae94"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{num_empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="0" width="122" height="20" uuid="bc66cd7c-d761-4449-80ae-a4976c6eea05"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{a_pat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="0" width="125" height="20" uuid="5a707b75-56ec-4b2b-94f6-b585d3170303"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{a_mat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="100" height="20" uuid="20de9e33-0ece-4629-935c-1528e2f27e11"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="0" width="89" height="20" uuid="65c6202b-008e-46a7-9aad-d40007283b9f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{area}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="22" y="76" width="531" height="50" uuid="cbee8818-b5d1-4103-a677-014034abc1ec"/>
+				<imageExpression><![CDATA["C:\\Users\\scrap_000\\Desktop\\SACEP\\Cliente-Aspirante\\foot.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="449" y="116" width="64" height="20" uuid="e61e26b2-9f95-4ed3-ae13-ad2a32e58c90"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="514" y="116" width="39" height="20" uuid="e31ef99f-e3b7-4f2e-b8bf-ff4ccd8e51e5"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="383" y="21" width="150" height="1" uuid="ba91b86a-ce75-4c42-854f-d619c0f98a1d"/>
+			</line>
+			<staticText>
+				<reportElement x="382" y="1" width="105" height="20" uuid="8ddc87a5-bc40-4a3f-aa78-f3c2ded9e344"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Total de Profesores: ]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="487" y="1" width="55" height="20" uuid="d1b51d6e-c69f-4dff-afe8-8cef7f5d97ee"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{num_empleado_7}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
